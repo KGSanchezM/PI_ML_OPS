@@ -129,7 +129,7 @@ async def user(id: str):
     
 
 @app.get("/recomendacion_usuario/{user_id:str}")
-async def user_recommendations(user_id: str):
+async def user(user_id: str):
     """
     Retorna la lista de recomendaciones para un usuario específico.
 
