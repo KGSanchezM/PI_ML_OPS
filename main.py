@@ -25,7 +25,7 @@ async def user(genero: str):
     """
     try:
         # Cargar el DataFrame desde el archivo CSV
-        df_genero = pd.read_csv("..\\Datsets\\Archivos_API\\PlayTimeGenre.csv")
+        df_genero = pd.read_csv("Datsets/Archivos_API/PlayTimeGenre.csv")
 
         # Filtrar el DataFrame para obtener solo las filas del género especificado
         df_genero = df_genero[df_genero['genres'] == genero]
@@ -73,7 +73,7 @@ async def user(developer: str):
 
     try:
         # Cargar el DataFrame desde el archivo CSV
-        analisis_sentimientos_df = pd.read_csv("..\\Datsets\\Archivos_API\\sentiment_analysis.csv")
+        analisis_sentimientos_df = pd.read_csv("Datsets/Archivos_API/sentiment_analysis.csv")
 
         developer_column = analisis_sentimientos_df["developer"].tolist()
 
@@ -111,7 +111,7 @@ async def user(id: str):
     """
     try:
         # Lectura del DataFrame
-        df_recomendaciones = pd.read_csv("..\\Datsets\\Modelo_ML\\recomendacion_item_item.csv")
+        df_recomendaciones = pd.read_csv("Datsets/Modelo_ML/recomendacion_item_item.csv")
 
         # Convertir el ID de cadena a número
         id_num = int(id)
