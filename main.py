@@ -126,34 +126,3 @@ async def user(id: str):
     except ValueError:
         # Manejar el caso en el que el ID no sea un número
         raise HTTPException(status_code=400, detail=f"El id {id} no es un número válido")
-    
-    
-@app.get("/recomendacion_usuario/{user_id:str}")
-async def user_recommendations(user_id: str):
-    """
-    Retorna la lista de recomendaciones para un usuario específico.
-
-    Parameters:
-    - user_id: El usuario para el cual se desea obtener las recomendaciones.
-
-    Returns:
-    - Lista de recomendaciones para el usuario especificado.
-    """
-    try:
-        # Leer el DataFrame de recomendaciones desde el archivo CSV
-        df_recomendaciones = pd.read_csv("Datsets/Modelo_ML/recomendacion_user_item.csv")
-        
-        # Filtrar el DataFrame para obtener solo las filas correspondientes al usuario dado
-        usuario_filtro = df_recomendaciones[df_recomendaciones['user_id'] == user_id]
-
-        # Verificar si el usuario existe en el DataFrame
-        if usuario_filtro.empty:
-            return f"No se encontraron recomendaciones para el usuario {user_id}"
-
-        # Concatenar las listas de recomendaciones correspondientes al usuario
-        recomendaciones_usuario = usuario_filtro['recomendaciones'].sum()
-
-        return {"recomendaciones": recomendaciones_usuario}
-    
-    except Exception as e:
-        return f"Error: {e}"
