@@ -146,7 +146,45 @@ async def user(año: int):
             status_code=500,
             detail=f"Error Interno del Servidor: {str(e)}"
         )
+    
+@app.get("/UsersWorstDeveloper/{año :int}")
+async def Users(año: int):
+    """
+    Devuelve las 3 desarrolladoras con menos recomendaciones por usuarios para el año dado.
 
+    Parameters:
+    - año (int): Año para el cual se desea obtener el top 3 de desarrolladoras con menos recomendaciones.
+
+    Returns:
+    - List[Dict[str, str]]: Lista con las 3 desarrolladoras menos recomendadas.
+      Ejemplo de retorno: [{"Puesto 1": X}, {"Puesto 2": Y}, {"Puesto 3": Z}]
+    """
+    try:
+        # Leer el archivo CSV que contiene la información de las recomendaciones por desarrollador
+        recomendaciones = pd.read_csv("Datsets/Archivos_API/UsersWorstDevelopers.csv")
+
+        # Filtrar desarrolladoras para el año dado
+        desarrolladoras = recomendaciones[recomendaciones['posted_year'] == año]
+
+        if not desarrolladoras.empty:
+            # Encuentra las 3 desarrolladoras con menos recomendaciones
+            desarrolladoras_top3 = desarrolladoras.nsmallest(3, 'recommend')
+            resultado = [{"Puesto 1": desarrolladoras_top3.iloc[0]['developer']},
+                         {"Puesto 2": desarrolladoras_top3.iloc[1]['developer']},
+                         {"Puesto 3": desarrolladoras_top3.iloc[2]['developer']}]
+            return resultado
+        else:
+            # Devolver una respuesta de error si no se encuentra información para el año
+            return JSONResponse(
+                status_code=404,
+                content={'error': f"No se encontraron datos para el año '{año}'"}
+            )
+    except Exception as e:
+        # Manejar cualquier excepción y devolver una respuesta 500
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error Interno del Servidor: {str(e)}"
+        )
 
 #Sentimen_analysis
 @app.get("/sentiment_analysis/{developer :str}")
