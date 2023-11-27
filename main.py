@@ -162,7 +162,7 @@ async def Users(año: int):
     """
     try:
         # Leer el archivo CSV que contiene la información de las recomendaciones por desarrollador
-        recomendaciones = pd.read_csv("Datsets/Archivos_API/UsersWorstDevelopers.csv")
+        recomendaciones = pd.read_csv("Datsets/Archivos_API/UsersWorstDeveloper.csv")
 
         # Filtrar desarrolladoras para el año dado
         desarrolladoras = recomendaciones[recomendaciones['posted_year'] == int(año)]
