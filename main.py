@@ -249,7 +249,9 @@ async def user(id: str):
         recomendaciones = df_recomendaciones[df_recomendaciones['id'] == id_num]['recomendaciones'].values.tolist()
 
         if not recomendaciones:
-            raise HTTPException(status_code=404, detail=f"No se encontraron recomendaciones para el id {id}")
+            return JSONResponse(
+                status_code=404,
+                content={'error': f"No se encontró información del id_juego '{id}'"})
 
         return {"recomendaciones": recomendaciones}
     except ValueError:
@@ -257,7 +259,7 @@ async def user(id: str):
         raise HTTPException(status_code=400, detail=f"El id {id} no es un número válido")
     
 #Recomendacioón usuarios
-@app.get("/recomendacion_usuario/{user_id:str}")
+@app.get("/recomendacion_usuario/{user_id: str}")
 async def user(user_id: str):
     """
     Obtiene recomendaciones de juegos basandose en usuarios similares.
@@ -277,7 +279,9 @@ async def user(user_id: str):
 
         # Verificar si el usuario existe en el DataFrame
         if usuario_filtro.empty:
-            return f"No se encontraron recomendaciones para el usuario {user_id}"
+            return JSONResponse(
+                status_code=404,
+                content={'error': f"No se encontró información del jugador  '{user_id}'"})
 
         # Concatenar las listas de recomendaciones correspondientes al usuario
         recomendaciones_usuario = usuario_filtro['recomendaciones'].sum()
