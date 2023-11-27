@@ -77,11 +77,11 @@ async def user(genero: str):
 
         if not datos_genero.empty:
             # Crear una lista de diccionarios para el tiempo de juego por año
-            tiempo_juego_por_anio = [{'Año': int(anio), 'Tiempo de Juego': int(tiempo_juego)} for anio, tiempo_juego in datos_genero[['anio_lanzamiento', 'tiempo_juego_total']].values]
+            tiempo_juego_por_anio = [{'Año': int(anio), 'Tiempo de Juego': int(tiempo_juego)} for anio, tiempo_juego in datos_genero[['release_year', 'playtime_forever']].values]
 
             # Crear el diccionario de salida
             resultado = {
-                'Usuario con más tiempo de juego para el género ' + genero: datos_genero.iloc[0]['id_usuario'],
+                'Usuario con más tiempo de juego para el género ' + genero: datos_genero.iloc[0]['user_id'],
                 'Horas jugadas': tiempo_juego_por_anio
             }
 
