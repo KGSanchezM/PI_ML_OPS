@@ -18,7 +18,7 @@ Los conjuntos de datos son los siguientes:
    - Ruta: [`Datsets/output_steam_games.json.gz`](Datsets/output_steam_games.json)
 
 La información detallada sobre el contenido de cada conjunto se encuentra especificada en el diccionario de datos, disponible en el archivo Excel:
-[`Datsets/Diccionario de Datos STEAM.xlsx`](Datsets/Diccionario%de%Datos%STEAM.xlsx)
+[`Datsets/Diccionario de Datos STEAM.xlsx`](Datasets/Diccionario%20de%20Datos%20STEAM.xlsx)
 
 Cabe destacar que, debido a restricciones de espacio en el repositorio, el archivo `australian_users_items` ha sido comprimido utilizando la herramienta Gzip.
 
@@ -43,7 +43,7 @@ Cabe destacar que el archivo de user_items se comprimió con la herramienta GZIP
 ### **2.-Feature Engineering:** 
 Se ha creado la columna 'sentiment_analysis' aplicando análisis de sentimiento a las reseñas de los usuarios mediante la librería NLTK. La asignación de valores es la siguiente: '0' si es una reseña negativa, '1' si es neutral y '2' si es positiva. Esta nueva columna se ha introducido para reemplazar la columna original 'user_reviews.review', facilitando así el trabajo de los modelos de machine learning y el análisis de datos.
 
-Para obtener más detalles sobre este proceso, puedes consultar la sección correspondiente en el [notebook de análisis de sentimiento](Notebooks\2.-analisis_sentiemientos.ipynb).
+Para obtener más detalles sobre este proceso, puedes consultar la sección correspondiente en el [notebook de análisis de sentimiento](Notebooks/2.-analisis_sentiemientos.ipynb).
 
 
 
