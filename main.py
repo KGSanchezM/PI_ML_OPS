@@ -102,7 +102,7 @@ async def user(genero: str):
 
 #UsersRecommend
 @app.get("/UsersRecommend/{año :int}")
-async def UsersRecommend(año: int):
+async def user(año: int):
     """
     Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado.
 
