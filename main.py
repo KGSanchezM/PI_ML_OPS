@@ -121,7 +121,7 @@ async def user(año: int):
         # Verificar si hay revisiones para el año dado
         if not recomendaciones_anio.empty:
             # Filtrar las revisiones para el año dado y recomendaciones positivas/neutrales
-            recomendaciones = recomendaciones_anio[recomendaciones_anio['posted_year'] == año]
+            recomendaciones = recomendaciones_anio[recomendaciones_anio['posted_year'] == int(año)]
             
             # Ordenar en orden descendente por la cantidad de recomendaciones
             recomendaciones = recomendaciones.sort_values('recommend', ascending=False)
