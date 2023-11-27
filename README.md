@@ -18,7 +18,7 @@ Los conjuntos de datos son los siguientes:
    - Ruta: [`Datsets/output_steam_games.json.gz`](Datsets/output_steam_games.json)
 
 La información detallada sobre el contenido de cada conjunto se encuentra especificada en el diccionario de datos, disponible en el archivo Excel:
-[`Datsets/Diccionario de Datos STEAM.xlsx`](Datsets/Diccionario de Datos STEAM.xlsx)
+[`Datsets/Diccionario de Datos STEAM.xlsx`](Datsets/Diccionario%de%Datos%STEAM.xlsx)
 
 Debido a restricciones de espacio en el repositorio, el archivo `australian_users_items` ha sido comprimido utilizando la herramienta Gzip.
 
