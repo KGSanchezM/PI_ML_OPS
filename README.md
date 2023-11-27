@@ -1,4 +1,4 @@
-![Steam](src\portada.png)
+![Steam](src/portada.png)
 <br />
 # Machine Learning Operations (MLOps): Sistema de Recomendación de Videojuegos para Usuarios de Steam
 
