@@ -20,7 +20,7 @@ Los conjuntos de datos son los siguientes:
 La información detallada sobre el contenido de cada conjunto se encuentra especificada en el diccionario de datos, disponible en el archivo Excel:
 [`Datsets/Diccionario de Datos STEAM.xlsx`](Datasets/Diccionario%20de%20Datos%20STEAM.xlsx)
 
-Cabe destacar que, debido a restricciones de espacio en el repositorio, el archivo `australian_users_items` ha sido comprimido utilizando la herramienta Gzip.
+Debido a restricciones de espacio en el repositorio, el archivo `australian_users_items` ha sido comprimido utilizando la herramienta Gzip.
 
 
 ## Objetivo
