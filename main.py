@@ -14,7 +14,7 @@ async def root():
 @app.get("/PlayTimeGenre/{genero :str}")
 async def user(genero: str):
     """
-    Endpoint para obtener el año de lanzamiento con más horas jugadas
+    Obtiene el año de lanzamiento con más horas jugadas
     para un género de juegos específico.
 
     Parameters:
@@ -60,10 +60,10 @@ async def user(genero: str):
 @app.get("/UserForGenre/{genero :str}")
 async def user(genero: str):
     """
-    Obtener el usuario con más tiempo de juego para un género dado.
+    Obtiene el usuario con más tiempo de juego para un género dado.
 
     Parámetros:
-    - `genero`: El género para el cual se solicita la información del usuario.
+    - genero: El género para el cual se solicita la información del usuario.
 
     Devuelve:
     - Respuesta JSON que contiene al usuario con más tiempo de juego para el género especificado y su tiempo de juego por año.
@@ -104,9 +104,9 @@ async def user(genero: str):
 @app.get("/UsersRecommend/{año :int}")
 async def user(año: int):
     """
-    Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado.
+    Obtiene los 3 juegos más recomendados por usuarios para el año dado.
 
-    Args:
+    Parámetros:
     - año (int): El año para el cual se desean obtener las recomendaciones.
 
     Returns:
@@ -151,9 +151,9 @@ async def user(año: int):
 @app.get("/UsersWorstDeveloper/{año :int}")
 async def Users(año: int):
     """
-    Devuelve las 3 desarrolladoras con menos recomendaciones por usuarios para el año dado.
+    Obtiene las tres desarrolladoras con menos recomendaciones por usuarios para el año dado.
 
-    Parameters:
+    Parámetros:
     - año (int): Año para el cual se desea obtener el top 3 de desarrolladoras con menos recomendaciones.
 
     Returns:
@@ -191,17 +191,13 @@ async def Users(año: int):
 @app.get("/sentiment_analysis/{developer :str}")
 async def user(developer: str):
     """
-    Obtiene la cantidad de comentarios positivos , negativos y neutrales de los desarrolladores.
+    Obtiene la cantidad de comentarios positivos , negativos y neutrales del desarrollador daro.
 
-    Parameters:
-    - developer (str): Nombre del desarrollador para el que se desea obtener el análisis de sentimientos.
+    Parámetros:
+    - developer (str): Nombre del desarrollador para el que se desea obtener la cantidad de comentarios.
 
     Returns:
     - dict: Un diccionario que contiene el análisis de sentimientos para el desarrollador especificado.
-
-    Raises:
-    - HTTPException(404): Se produce cuando no se encuentra información para el desarrollador especificado.
-    - HTTPException(500): Se produce en caso de un error interno durante el procesamiento.
     """
 
     try:
@@ -228,14 +224,14 @@ async def user(developer: str):
             detail=f"Error interno: {str(e)}"
         )
 
-
+#Recomendación_juegos
 @app.get("/recomendacion_juego/{id_juego :str}")
 async def user(id: str):
     """
-    Obtiene las recomendaciones para un juego basándose en sus características.
+    Obtiene las recomendaciones para un juego basándose en juegos similares a él.
 
-    Parameters:
-    - id (str): El ID del juego.
+    Parámetros:
+    - id (str): El id del juego.
 
     Returns:
     - dict: Un diccionario que contiene las recomendaciones del juego. 
@@ -253,20 +249,20 @@ async def user(id: str):
         recomendaciones = df_recomendaciones[df_recomendaciones['id'] == id_num]['recomendaciones'].values.tolist()
 
         if not recomendaciones:
-            raise HTTPException(status_code=404, detail=f"No se encontraron recomendaciones para el ID {id}")
+            raise HTTPException(status_code=404, detail=f"No se encontraron recomendaciones para el id {id}")
 
         return {"recomendaciones": recomendaciones}
     except ValueError:
         # Manejar el caso en el que el ID no sea un número
         raise HTTPException(status_code=400, detail=f"El id {id} no es un número válido")
     
-
+#Recomendacioón usuarios
 @app.get("/recomendacion_usuario/{user_id:str}")
 async def user(user_id: str):
     """
-    Retorna la lista de recomendaciones para un usuario específico.
+    Obtiene recomendaciones de juegos basandose en usuarios similares.
 
-    Parameters:
+    Parámetros:
     - user_id: El usuario para el cual se desea obtener las recomendaciones.
 
     Returns:
