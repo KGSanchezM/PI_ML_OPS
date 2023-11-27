@@ -8,8 +8,9 @@ app = FastAPI(title='API Steam Games')
 #Mensaje de bienvenida
 @app.get("/")
 async def root():
-    return {"Mensaje": "Proyecto Individual"}
+    return {"Mensaje": "Bienvenidos a mi proyecto individual del bootcamp SoyHenry"}
 
+#PlayTimeGenre
 @app.get("/PlayTimeGenre/{genero}")
 async def user(genero: str):
     """
@@ -55,6 +56,51 @@ async def user(genero: str):
             content={'error': f"Error interno: {str(e)}"}
         )
 
+#UserForGenre
+@app.get("/UserForGenre/{genero}")
+async def user(genero: str):
+    """
+    Obtener el usuario con más tiempo de juego para un género dado.
+
+    Parámetros:
+    - `genero`: El género para el cual se solicita la información del usuario.
+
+    Devuelve:
+    - Respuesta JSON que contiene al usuario con más tiempo de juego para el género especificado y su tiempo de juego por año.
+    """
+    try:
+        # Leer el archivo CSV que contiene la información del usuario para el género dado
+        df_usuario_por_genero = pd.read_csv("Datsets/Archivos_API/UserForGenre.csv")
+
+        # Filtrar datos para el género especificado
+        datos_genero = df_usuario_por_genero[df_usuario_por_genero['genres'] == genero]
+
+        if not datos_genero.empty:
+            # Crear una lista de diccionarios para el tiempo de juego por año
+            tiempo_juego_por_anio = [{'Año': int(anio), 'Tiempo de Juego': int(tiempo_juego)} for anio, tiempo_juego in datos_genero[['anio_lanzamiento', 'tiempo_juego_total']].values]
+
+            # Crear el diccionario de salida
+            resultado = {
+                'Usuario con más tiempo de juego para el género ' + genero: datos_genero.iloc[0]['id_usuario'],
+                'Horas jugadas': tiempo_juego_por_anio
+            }
+
+            return resultado
+        else:
+            # Devolver una respuesta 404 si no se encuentra información para el género
+            raise HTTPException(
+                status_code=404,
+                detail=f"No se encontró información para el género '{genero}'"
+            )
+
+    except Exception as e:
+        # Manejar cualquier excepción y devolver una respuesta 500
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error Interno del Servidor: {str(e)}"
+        )
+
+#Sentimen_analysis
 @app.get("/sentiment_analysis/{developer:str}")
 async def user(developer: str):
     """

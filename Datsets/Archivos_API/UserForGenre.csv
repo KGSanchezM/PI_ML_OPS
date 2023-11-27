@@ -1,0 +1,160 @@
+genres,release_year,user_id,playtime_forever
+Action,1995.0,Sp3ctre,217
+Action,1997.0,Sp3ctre,242
+Action,1999.0,Sp3ctre,44
+Action,2000.0,Sp3ctre,70644
+Action,2001.0,Sp3ctre,250
+Action,2002.0,Sp3ctre,238
+Action,2003.0,Sp3ctre,7744
+Action,2004.0,Sp3ctre,127411
+Action,2005.0,Sp3ctre,21339
+Action,2006.0,Sp3ctre,90253
+Action,2007.0,Sp3ctre,112794
+Action,2008.0,Sp3ctre,8533
+Action,2009.0,Sp3ctre,108771
+Action,2010.0,Sp3ctre,82766
+Action,2011.0,Sp3ctre,155459
+Action,2012.0,Sp3ctre,384238
+Action,2013.0,Sp3ctre,122158
+Action,2014.0,Sp3ctre,132864
+Action,2015.0,Sp3ctre,389314
+Action,2016.0,Sp3ctre,30195
+Action,2017.0,Sp3ctre,43327
+Adventure,1998.0,REBAS_AS_F-T,2
+Adventure,1999.0,REBAS_AS_F-T,225
+Adventure,2002.0,REBAS_AS_F-T,1
+Adventure,2003.0,REBAS_AS_F-T,1863
+Adventure,2004.0,REBAS_AS_F-T,2115
+Adventure,2005.0,REBAS_AS_F-T,3293
+Adventure,2006.0,REBAS_AS_F-T,1704
+Adventure,2007.0,REBAS_AS_F-T,9899
+Adventure,2008.0,REBAS_AS_F-T,4513
+Adventure,2009.0,REBAS_AS_F-T,47903
+Adventure,2010.0,REBAS_AS_F-T,56701
+Adventure,2011.0,REBAS_AS_F-T,113681
+Adventure,2012.0,REBAS_AS_F-T,220083
+Adventure,2013.0,REBAS_AS_F-T,283269
+Adventure,2014.0,REBAS_AS_F-T,300155
+Adventure,2015.0,REBAS_AS_F-T,732128
+Adventure,2016.0,REBAS_AS_F-T,875020
+Adventure,2017.0,REBAS_AS_F-T,33668
+Audio Production,2014.0,Lickidactyl,109916
+Casual,2004.0,REBAS_AS_F-T,6985
+Casual,2006.0,REBAS_AS_F-T,36
+Casual,2007.0,REBAS_AS_F-T,1070
+Casual,2008.0,REBAS_AS_F-T,1367
+Casual,2009.0,REBAS_AS_F-T,9348
+Casual,2010.0,REBAS_AS_F-T,15054
+Casual,2011.0,REBAS_AS_F-T,88962
+Casual,2012.0,REBAS_AS_F-T,46974
+Casual,2013.0,REBAS_AS_F-T,155496
+Casual,2014.0,REBAS_AS_F-T,144340
+Casual,2015.0,REBAS_AS_F-T,466123
+Casual,2016.0,REBAS_AS_F-T,577476
+Casual,2017.0,REBAS_AS_F-T,58
+Early Access,2013.0,76561197978756659,316786
+Early Access,2015.0,76561197978756659,183
+Education,2010.0,tsunamitad,430
+Education,2011.0,tsunamitad,600068
+Education,2013.0,tsunamitad,526
+Free to Play,2003.0,shinomegami,530882
+Free to Play,2006.0,shinomegami,1694
+Free to Play,2009.0,shinomegami,1
+Free to Play,2010.0,shinomegami,1934
+Free to Play,2011.0,shinomegami,63958
+Free to Play,2012.0,shinomegami,5989
+Free to Play,2013.0,shinomegami,44244
+Free to Play,2014.0,shinomegami,1545
+Free to Play,2015.0,shinomegami,205544
+Free to Play,2016.0,shinomegami,1321
+Free to Play,2017.0,shinomegami,135
+Indie,2001.0,REBAS_AS_F-T,11
+Indie,2003.0,REBAS_AS_F-T,1863
+Indie,2005.0,REBAS_AS_F-T,2176
+Indie,2006.0,REBAS_AS_F-T,1673
+Indie,2007.0,REBAS_AS_F-T,1070
+Indie,2008.0,REBAS_AS_F-T,1366
+Indie,2009.0,REBAS_AS_F-T,28993
+Indie,2010.0,REBAS_AS_F-T,21687
+Indie,2011.0,REBAS_AS_F-T,108626
+Indie,2012.0,REBAS_AS_F-T,157144
+Indie,2013.0,REBAS_AS_F-T,201689
+Indie,2014.0,REBAS_AS_F-T,361269
+Indie,2015.0,REBAS_AS_F-T,783432
+Indie,2016.0,REBAS_AS_F-T,860387
+Indie,2017.0,REBAS_AS_F-T,33887
+Massively Multiplayer,2006.0,Evilutional,424
+Massively Multiplayer,2012.0,Evilutional,671216
+Massively Multiplayer,2013.0,Evilutional,68148
+Massively Multiplayer,2015.0,Evilutional,6424
+Massively Multiplayer,2016.0,Evilutional,1291
+Massively Multiplayer,2017.0,Evilutional,10894
+Photo Editing,2014.0,Sky_Wolf,21885
+RPG,1999.0,shinomegami,377
+RPG,2000.0,shinomegami,8392
+RPG,2003.0,shinomegami,530943
+RPG,2004.0,shinomegami,1801
+RPG,2005.0,shinomegami,185
+RPG,2006.0,shinomegami,2023
+RPG,2007.0,shinomegami,136710
+RPG,2008.0,shinomegami,1305
+RPG,2009.0,shinomegami,1384
+RPG,2010.0,shinomegami,4311
+RPG,2011.0,shinomegami,21072
+RPG,2012.0,shinomegami,27524
+RPG,2013.0,shinomegami,126490
+RPG,2014.0,shinomegami,147337
+RPG,2015.0,shinomegami,127914
+RPG,2016.0,shinomegami,15550
+Racing,1995.0,DownSyndromeKid,318
+Racing,2005.0,DownSyndromeKid,91
+Racing,2006.0,DownSyndromeKid,74553
+Racing,2007.0,DownSyndromeKid,147814
+Racing,2008.0,DownSyndromeKid,147707
+Racing,2011.0,DownSyndromeKid,295361
+Racing,2013.0,DownSyndromeKid,74271
+Racing,2014.0,DownSyndromeKid,990
+Racing,2015.0,DownSyndromeKid,4784
+Racing,2016.0,DownSyndromeKid,185
+Simulation,1993.0,shinomegami,22001
+Simulation,2002.0,shinomegami,2434
+Simulation,2003.0,shinomegami,530882
+Simulation,2004.0,shinomegami,75
+Simulation,2006.0,shinomegami,1579
+Simulation,2007.0,shinomegami,193284
+Simulation,2008.0,shinomegami,269
+Simulation,2009.0,shinomegami,4728
+Simulation,2010.0,shinomegami,12271
+Simulation,2011.0,shinomegami,4231
+Simulation,2012.0,shinomegami,24002
+Simulation,2013.0,shinomegami,110713
+Simulation,2014.0,shinomegami,26304
+Simulation,2015.0,shinomegami,90318
+Simulation,2016.0,shinomegami,239
+Software Training,2014.0,Lickidactyl,109916
+Sports,2012.0,76561197995725436,40941
+Sports,2013.0,76561197995725436,79186
+Sports,2014.0,76561197995725436,73079
+Strategy,1993.0,shinomegami,22001
+Strategy,1995.0,shinomegami,20485
+Strategy,1999.0,shinomegami,14
+Strategy,2001.0,shinomegami,2
+Strategy,2002.0,shinomegami,2434
+Strategy,2003.0,shinomegami,531616
+Strategy,2004.0,shinomegami,847
+Strategy,2006.0,shinomegami,139
+Strategy,2007.0,shinomegami,68861
+Strategy,2008.0,shinomegami,500
+Strategy,2009.0,shinomegami,74762
+Strategy,2010.0,shinomegami,16124
+Strategy,2011.0,shinomegami,73810
+Strategy,2012.0,shinomegami,84915
+Strategy,2013.0,shinomegami,147989
+Strategy,2014.0,shinomegami,131131
+Strategy,2015.0,shinomegami,4296
+Strategy,2016.0,shinomegami,1560
+Utilities,2014.0,76561198073642113,207651
+Video Production,2015.0,ScottyG555,168314
+Web Publishing,2005.0,Xyphien,7296
+Web Publishing,2012.0,Xyphien,64657
+Web Publishing,2015.0,Xyphien,71011
