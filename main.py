@@ -11,7 +11,7 @@ async def root():
     return {"Mensaje": "Bienvenidos a mi proyecto individual del bootcamp SoyHenry"}
 
 #PlayTimeGenre
-@app.get("/PlayTimeGenre/{genero:str}")
+@app.get("/PlayTimeGenre/{genero :str}")
 async def user(genero: str):
     """
     Endpoint para obtener el año de lanzamiento con más horas jugadas
@@ -57,7 +57,7 @@ async def user(genero: str):
         )
 
 #UserForGenre
-@app.get("/UserForGenre/{genero:str}")
+@app.get("/UserForGenre/{genero :str}")
 async def user(genero: str):
     """
     Obtener el usuario con más tiempo de juego para un género dado.
@@ -100,8 +100,56 @@ async def user(genero: str):
             detail=f"Error Interno del Servidor: {str(e)}"
         )
 
+#UsersRecommend
+@app.get("/UsersRecommend/{año :int}")
+async def UsersRecommend(año: int):
+    """
+    Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado.
+
+    Args:
+    - año (int): El año para el cual se desean obtener las recomendaciones.
+
+    Returns:
+    - dict: Un diccionario que contiene el top 3 de juegos recomendados en el formato:
+        {"Puesto 1": "Nombre del Juego1", "Puesto 2": "Nombre del Juego2", "Puesto 3": "Nombre del Juego3"}
+        En caso de no haber recomendaciones para el año especificado, devuelve una respuesta de error.
+    """
+    try:
+        # Leer el archivo CSV que contiene la información de las recomendaciones para el año dado
+        recomendaciones_anio = pd.read_csv("Datsets/Archivos_API/UsersRecommend.csv")
+
+        # Verificar si hay revisiones para el año dado
+        if not recomendaciones_anio.empty:
+            # Filtrar las revisiones para el año dado y recomendaciones positivas/neutrales
+            recomendaciones = recomendaciones_anio[recomendaciones_anio['posted_year'] == año]
+            
+            # Ordenar en orden descendente por la cantidad de recomendaciones
+            recomendaciones = recomendaciones.sort_values('recommend', ascending=False)
+            
+            # Crear una única línea de resultado
+            resultado = {
+                "Puesto 1": recomendaciones.iloc[0]['app_name'],
+                "Puesto 2": recomendaciones.iloc[1]['app_name'],
+                "Puesto 3": recomendaciones.iloc[2]['app_name']
+            }
+            
+            return resultado
+        else:
+            # Devolver una respuesta de error si no se encuentra información para el año
+            return JSONResponse(
+                status_code=404,
+                content={'error': f"No hay recomendaciones para el año {año}"}
+            )
+    except Exception as e:
+        # Manejar cualquier excepción y devolver una respuesta 500
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error Interno del Servidor: {str(e)}"
+        )
+
+
 #Sentimen_analysis
-@app.get("/sentiment_analysis/{developer:str}")
+@app.get("/sentiment_analysis/{developer :str}")
 async def user(developer: str):
     """
     Obtiene la cantidad de comentarios positivos , negativos y neutrales de los desarrolladores.
@@ -142,7 +190,7 @@ async def user(developer: str):
         )
 
 
-@app.get("/recomendacion_juego/{id_juego:str}")
+@app.get("/recomendacion_juego/{id_juego :str}")
 async def user(id: str):
     """
     Obtiene las recomendaciones para un juego basándose en sus características.
