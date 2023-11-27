@@ -71,7 +71,7 @@ Ejemplo de retorno: {'Valve' : [Negative = 182, Neutral = 120, Positive = 278]}
 
 ### **4.- API**
 
-Se implementó una API utilizando FastApi para exponer las funciones de consulta como endpoints y tambien se uso Render. El deploy de la API se encuentra en: https://api-steam-games-me3w.onrender.com/docs.El código fuente para la API se encuentra en el archivo [main.py](main.py).
+Se implementó una API utilizando FastApi para exponer las funciones de consulta como endpoints y tambien se uso Render. El deploy de la API se encuentra en: https://api-steam-games-me3w.onrender.com/docs. El código para la API se encuentra en el archivo [main.py](main.py).
 
 ### **5.-EDA**
 
