@@ -87,10 +87,10 @@ async def user(genero: str):
 
             return resultado
         else:
-            # Devolver una respuesta 404 si no se encuentra información para el género
-            raise HTTPException(
+            # Devolver una respuesta de error si no se encuentra información para el género
+            return JSONResponse(
                 status_code=404,
-                detail=f"No se encontró información para el género '{genero}'"
+                content={'error': f"No se encontró información del género '{genero}'"}
             )
 
     except Exception as e:
@@ -128,10 +128,10 @@ async def user(developer: str):
             sentiment_counts = analisis_sentimientos_df.iloc[index, 1:].to_dict()
             return {developer: sentiment_counts}
         else:
-            # Devolver una respuesta de error si no se encuentra información para el desarrollador
-            raise HTTPException(
+            # Devolver una respuesta de error si no se encuentra información para el género
+            return JSONResponse(
                 status_code=404,
-                detail=f"No se encontró información del desarrollador '{developer}'"
+                content={'error': f"No se encontró información del desarrollador '{developer}'"}
             )
 
     except Exception as e:
