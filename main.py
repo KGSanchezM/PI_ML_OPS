@@ -146,7 +146,8 @@ async def user(año: int):
             status_code=500,
             detail=f"Error Interno del Servidor: {str(e)}"
         )
-    
+
+#UsersWorstDeveloper 
 @app.get("/UsersWorstDeveloper/{año :int}")
 async def Users(año: int):
     """
@@ -164,7 +165,7 @@ async def Users(año: int):
         recomendaciones = pd.read_csv("Datsets/Archivos_API/UsersWorstDevelopers.csv")
 
         # Filtrar desarrolladoras para el año dado
-        desarrolladoras = recomendaciones[recomendaciones['posted_year'] == año]
+        desarrolladoras = recomendaciones[recomendaciones['posted_year'] == int(año)]
 
         if not desarrolladoras.empty:
             # Encuentra las 3 desarrolladoras con menos recomendaciones
