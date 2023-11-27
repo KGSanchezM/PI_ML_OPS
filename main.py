@@ -11,7 +11,7 @@ async def root():
     return {"Mensaje": "Bienvenidos a mi proyecto individual del bootcamp SoyHenry"}
 
 #PlayTimeGenre
-@app.get("/PlayTimeGenre/{genero}")
+@app.get("/PlayTimeGenre/{genero:str}")
 async def user(genero: str):
     """
     Endpoint para obtener el año de lanzamiento con más horas jugadas
@@ -57,7 +57,7 @@ async def user(genero: str):
         )
 
 #UserForGenre
-@app.get("/UserForGenre/{genero}")
+@app.get("/UserForGenre/{genero:str}")
 async def user(genero: str):
     """
     Obtener el usuario con más tiempo de juego para un género dado.
@@ -142,7 +142,7 @@ async def user(developer: str):
         )
 
 
-@app.get("/recomendacion_juego/{id juego:str}")
+@app.get("/recomendacion_juego/{id_juego:str}")
 async def user(id: str):
     """
     Obtiene las recomendaciones para un juego basándose en sus características.
