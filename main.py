@@ -237,6 +237,8 @@ async def user(id: str):
     - dict: Un diccionario que contiene las recomendaciones del juego. 
             En caso de éxito, se devuelve {"recomendaciones": [...]}.
             Si el ID no es un número o no se encuentran recomendaciones, se devuelve {"mensaje": "..."}. 
+    
+    Ejemplos de id_juego : 773570 , 57696 , 208796 , 348960     
     """
     try:
         # Lectura del DataFrame
@@ -269,7 +271,10 @@ async def user(user_id: str):
 
     Returns:
     - Lista de recomendaciones para el usuario especificado.
+
+    Ejemplos de user_id : 16395 , 2greasy , 350176 , chun437
     """
+
     try:
         # Leer el DataFrame de recomendaciones desde el archivo CSV
         df_recomendaciones = pd.read_csv("Datsets/Modelo_ML/recomendacion_user_item.csv")
