@@ -92,7 +92,8 @@ Modelo que recomienda juegos a un usuario basándose en las preferencias de otro
 
 ### **6.- Video Explicativo**
 
-Creé un video explicativo detallando el uso de los endpoints desplegados en la plataforma Render.
+Creé un video explicativo del proyecto y detallando el uso de los endpoints desplegados en la plataforma Render.
+[Video](https://drive.google.com/drive/folders/12ZqnSuVZkh0KdJDydxzQI2MTsckLn8ZN?usp=sharing)
 
 
 
