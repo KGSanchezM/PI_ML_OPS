@@ -17,12 +17,12 @@ async def user(genero: str):
     Obtiene el año de lanzamiento con más horas jugadas
     para un género de juegos específico.
 
-    Parameters:
+    Parámetros:
         genero (str): El género de juegos para el cual se quiere obtener la información.
 
     Returns:
         JSONResponse: Una respuesta JSON con el año de lanzamiento con más horas jugadas
-        para el género especificado, o un mensaje de error si no se encuentra información.
+        para el género especificado, ó un mensaje de error si no se encuentra información.
     """
     try:
         # Cargar el DataFrame desde el archivo CSV
@@ -60,13 +60,13 @@ async def user(genero: str):
 @app.get("/UserForGenre/{genero :str}")
 async def user(genero: str):
     """
-    Obtiene el usuario con más tiempo de juego para un género dado.
+    Obtiene el usuario con el mayor tiempo de juego para un género dado.
 
     Parámetros:
     - genero: El género para el cual se solicita la información del usuario.
 
     Devuelve:
-    - Respuesta JSON que contiene al usuario con más tiempo de juego para el género especificado y su tiempo de juego por año.
+    - Respuesta JSON que contiene al usuario con mayor tiempo de juego para el género especificado y su tiempo de juego por año.
     """
     try:
         # Leer el archivo CSV que contiene la información del usuario para el género dado
@@ -81,7 +81,7 @@ async def user(genero: str):
 
             # Crear el diccionario de salida
             resultado = {
-                'Usuario con más tiempo de juego para el género ' + genero: datos_genero.iloc[0]['user_id'],
+                'Usuario con mayor tiempo de juego para el género ' + genero: datos_genero.iloc[0]['user_id'],
                 'Horas jugadas': tiempo_juego_por_anio
             }
 
@@ -104,7 +104,7 @@ async def user(genero: str):
 @app.get("/UsersRecommend/{año :int}")
 async def user(año: int):
     """
-    Obtiene los 3 juegos más recomendados por usuarios para el año dado.
+    Obtiene los 3 juegos más recomendados por usuarios para el año ingresado.
 
     Parámetros:
     - año (int): El año para el cual se desean obtener las recomendaciones.
@@ -191,7 +191,7 @@ async def Users(año: int):
 @app.get("/sentiment_analysis/{developer :str}")
 async def user(developer: str):
     """
-    Obtiene la cantidad de comentarios positivos , negativos y neutrales del desarrollador daro.
+    Obtiene la cantidad de comentarios positivos, negativos y neutrales del desarrollador ingresado.
 
     Parámetros:
     - developer (str): Nombre del desarrollador para el que se desea obtener la cantidad de comentarios.
@@ -231,7 +231,7 @@ async def user(id: str):
     Obtiene las recomendaciones para un juego basándose en juegos similares a él.
 
     Parámetros:
-    - id (str): El id del juego.
+    - id_juego (str): El código id del juego.
 
     Returns:
     - dict: Un diccionario que contiene las recomendaciones del juego. 
@@ -264,7 +264,7 @@ async def user(id: str):
 @app.get("/recomendacion_usuario/{user_id: str}")
 async def user(user_id: str):
     """
-    Obtiene recomendaciones de juegos basandose en usuarios similares.
+    Obtiene recomendaciones de juegos basándose en usuarios similares.
 
     Parámetros:
     - user_id: El usuario para el cual se desea obtener las recomendaciones.

@@ -4,7 +4,7 @@
 
 ## Descripción del Proyecto
 
-En este proyecto, trabajamos con tres conjuntos de datos en formato JSON, los cuales presentan una estructura anidada. Debemos extraer información para la creación de un sistema de recomendación. A través de un proceso de ETL (Extracción, Transformación y Carga).
+En este proyecto, trabajamos con tres conjuntos de datos en formato JSON, los cuales presentan una estructura anidada. Debemos extraer información para la creación de un sistema de recomendación a través de un proceso de ETL (Extracción, Transformación y Carga).
 
 Los conjuntos de datos son los siguientes:
 
@@ -25,7 +25,7 @@ Debido a restricciones de espacio en el repositorio, el archivo `australian_user
 
 ## Objetivo
 
-Desarrollar un sistema de recomendación de juegos utilizando los conjuntos de datos proporcionados. Abordaremos todas las fases clave de Data Engineering, desde la preparación de datos (ETL) hasta el análisis exploratorio y la implementación del modelo. <br />
+Desarrollar un sistema de recomendación de juegos utilizando los conjuntos de datos proporcionados. Abordaremos todas las fases clave de Data Engineering desde la preparación de datos (ETL) hasta el análisis exploratorio y la implementación del modelo. <br />
 <br />
 
 ## Proceso del Proyecto <br />
@@ -43,13 +43,13 @@ Cabe destacar que el archivo de user_items se comprimió con la herramienta GZIP
 ### **2.-Feature Engineering:** 
 Se ha creado la columna 'sentiment_analysis' aplicando análisis de sentimiento a las reseñas de los usuarios mediante la librería NLTK. La asignación de valores es la siguiente: '0' si es una reseña negativa, '1' si es neutral y '2' si es positiva. Esta nueva columna se ha introducido para reemplazar la columna original 'user_reviews.review', facilitando así el trabajo de los modelos de machine learning y el análisis de datos.
 
-Para obtener más detalles sobre este proceso, puedes consultar la sección correspondiente en el [notebook de análisis de sentimiento](Notebooks/2.-analisis_sentiemientos.ipynb).
+Para obtener más detalles sobre este proceso se puede consultar la sección correspondiente en el [notebook de análisis de sentimiento](Notebooks/2.-analisis_sentiemientos.ipynb).
 
 
 
 ### **3.- Funciones de consultas** <br />
 
-- **def PlayTimeGenre( genero : str ):** Debe devolver año con mas horas jugadas para dicho género.[Notebook](Notebooks/3.-play_time_genre.ipynb)
+- **def PlayTimeGenre( genero : str ):** Debe devolver año con más horas jugadas para dicho género.[Notebook](Notebooks/3.-play_time_genre.ipynb)
 
 Ejemplo de retorno: {"Año de lanzamiento con más horas jugadas para Género X" : 2013}. 
 
@@ -57,11 +57,11 @@ Ejemplo de retorno: {"Año de lanzamiento con más horas jugadas para Género X"
 
 Ejemplo de retorno: {"Usuario con más horas jugadas para Género X" : us213ndjss09sdf, "Horas jugadas":[{Año: 2013, Horas: 203}, {Año: 2012, Horas: 100}, {Año: 2011, Horas: 23}]}.
 
-- **def UsersRecommend( año : int ):** Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado. (reviews.recommend = True y comentarios positivos/neutrales)[Notebook](Notebooks/5.-users_recommend.ipynb)
+- **def UsersRecommend( año : int ):** Devuelve el top 3 de juegos más recomendados por usuarios para el año dado. (reviews.recommend = True y comentarios positivos/neutrales)[Notebook](Notebooks/5.-users_recommend.ipynb)
 
 Ejemplo de retorno: [{"Puesto 1" : X}, {"Puesto 2" : Y},{"Puesto 3" : Z}].
 
-- **def UsersWorstDeveloper( año : int ):** Devuelve el top 3 de desarrolladoras con juegos MENOS recomendados por usuarios para el año dado. (reviews.recommend = False y comentarios negativos)[Notebook](Notebooks/6.-users_worst_developer.ipynb)
+- **def UsersWorstDeveloper( año : int ):** Devuelve el top 3 de desarrolladoras con juegos menos recomendados por usuarios para el año dado. (reviews.recommend = False y comentarios negativos)[Notebook](Notebooks/6.-users_worst_developer.ipynb)
 
 Ejemplo de retorno: [{"Puesto 1" : X}, {"Puesto 2" : Y},{"Puesto 3" : Z}].
 
@@ -71,11 +71,11 @@ Ejemplo de retorno: {'Valve' : [Negative = 182, Neutral = 120, Positive = 278]}
 
 ### **4.- API**
 
-Se implementó una API utilizando FastApi para exponer las funciones de consulta como endpoints y tambien se uso Render. El deploy de la API se encuentra en: https://api-steam-games-me3w.onrender.com/docs. El código para la API se encuentra en el archivo [main.py](main.py).
+Se implementó una API utilizando FastApi para exponer las funciones de consulta como endpoints y tambien se usó Render. El deploy de la API se encuentra en: https://api-steam-games-me3w.onrender.com/docs. El código para la API se encuentra en el archivo [main.py](main.py).
 
 ### **5.-EDA**
 
-Realice el análisis exploratorio de datos (EDA). Durante este proceso, se exploraron y examinaron  los conjuntos de datos. 
+Realicé el análisis exploratorio de datos (EDA). Durante este proceso, se exploraron y examinaron  los conjuntos de datos. 
 [Notebook del Análisis Exploratorio de Datos (EDA)](Notebooks/8.-EDA.ipynb).
 
 
@@ -84,7 +84,7 @@ Realice el análisis exploratorio de datos (EDA). Durante este proceso, se explo
 Crear el sistema de recomendación con dos enfoques distintos:
 
 - **Sistema de Recomendación ítem-ítem:**
-Mmodelo que recomienda juegos similares en función de un juego dado. Se utilizó la similitud del coseno como métrica principal para establecer la relación entre juegos.[Notebook](Notebooks/9.-sistema_recomendacion_item_item.ipynb)
+Modelo que recomienda juegos similares en función de un juego dado. Se utilizó la similitud del coseno como métrica principal para establecer la relación entre juegos.[Notebook](Notebooks/9.-sistema_recomendacion_item_item.ipynb)
 
 - **Sistema de Recomendación usuario-ítem:**
 Modelo que recomienda juegos a un usuario basándose en las preferencias de otros usuarios similares.[Notebook](Notebooks/10.-sistema_recomendacion_user_item.ipynb)
@@ -98,7 +98,7 @@ Creé un video explicativo detallando el uso de los endpoints desplegados en la 
 
 ## Estructura del Repositorio
 
-**1. [/Notebooks](Notebooks/):** Contiene los Jupyter Notebooks donde se realizaron todas las operaciones de este proyecto. Cada notebook se explica paso a paso cómo se lograron los resultados.
+**1. [/Notebooks](Notebooks/):** Contiene los Jupyter Notebooks donde se realizaron todas las operaciones de este proyecto. Cada notebook explica paso a paso cómo se lograron los resultados.
 
 **2. [/Datsets](Datsets/):** Almacena los datasets utilizados.
    - **Archivos_API:** Contiene los datasets consumidos por la API.
